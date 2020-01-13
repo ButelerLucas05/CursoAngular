@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 // Importamos la interfaz Heroe de Heroes.service
-import { HeroesService, Heroe} from '../../services/heroes.service'
+import { HeroesService, Heroe} from '../../services/heroes.service';
+
+// Permite rutear a traves de la funcion verHeroe()
+import {Router} from '@angular/router';
+
 
 
 @Component({
@@ -9,10 +13,14 @@ import { HeroesService, Heroe} from '../../services/heroes.service'
 })
 export class HeroesComponent implements OnInit {
 
-  heroes:Heroe[] = []
+  heroes:Heroe[] = [];
 
-                      // Alias del servicio en el componente
-  constructor(private _heroesService:HeroesService) { }
+              // Alias del servicio en el componente
+              // hay que instanciar cada componente que queremos usar
+  constructor(private _heroesService:HeroesService,
+              private router:Router
+              
+              ) { }
 
   ngOnInit() {
 
@@ -22,4 +30,11 @@ export class HeroesComponent implements OnInit {
 
   }
 
+  // Funcion para redireccionar a la ruta del Heroe especifico
+  verHeroe(i:number){
+    this.router.navigate(['/heroe',i]);
+
+  }
+
+  red
 }

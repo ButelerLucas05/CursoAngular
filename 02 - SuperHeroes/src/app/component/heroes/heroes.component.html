@@ -7,16 +7,22 @@
 <div class="card-columns">
 
     <!-- con el con el ngFor recorremos el arreglo  heroes de heroes.component.ts-->
-    <div class="card" *ngFor="let item of heroes">
-        <img class="card-img-top img-fluid" [src]="heroes.img" alt="Aquaman">
+    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
+
+          <!--                                     Variable For.Atributo [] para indicar que angular maneja el atributo-->
+        <img class="card-img-top img-fluid" [src]="heroe.img" [alt]="heroe.nombre" >
         
         <div class="card-body">
-            <h1>{{Heroes.img}}</h1>
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <h5 class="card-title">{{ heroe.nombre }}</h5>
+            <p class="card-text">{{ heroe.bio }}</p>
+            <p class="card-text"><small class="text-muted">{{ heroe.aparicion   }}</small></p>
 
-            <button class="btn btn-outline-primary btn-block">Ver mas </button>
+            <button (click)="verHeroe(i)"
+            class="btn btn-outline-primary btn-block">Ver mas... </button>
+
+            <!--  con el router link hacemos ref a la ruta del link, los parametros son Ruta/indice-->
+           <!-- <a [routerLink]="['/heroe',i]"  class="btn btn-outline-primary btn-block">Ver mas...</a> -->
+
         </div>
     </div>
 
