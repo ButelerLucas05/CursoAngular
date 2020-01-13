@@ -14,19 +14,19 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item " routerLinkActive="active">
           <!-- el routerLink es el encargado de redireccionar al path que se definio en las rutas -->
-          <a class="nav-link" [routerLink]="['home']">Home </a>
+          <a class="nav-link" [routerLink]="['home']"> Inicio </a>
         </li>
         <li class="nav-item " routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['heroes']">Heroes</a>
+          <a class="nav-link" [routerLink]="['heroes']"> Heroes</a>
         </li>
         <li class="nav-item " routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['about']">About</a>
+          <a class="nav-link" [routerLink]="['about']"> Acerca de...</a>
         </li>
       </ul>
 
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar heroe" aria-label="Search" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
+        <button (keyup.enter)="buscarHeroe(buscarTexto.value)" class="btn btn-secondary my-2 my-sm-0" type="button"> Buscar</button>
       </form>
 
     </div>
