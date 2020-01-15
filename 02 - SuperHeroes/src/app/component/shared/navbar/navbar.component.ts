@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { } from ''
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,14 +7,16 @@ import { } from ''
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router:Router
+
+  ) { }
 
   ngOnInit() {
   }
 
   buscarHeroe(busqueda:string){
-
-
+    // la variable busqueda se define en el app route, al momnento de querere pasar el parametro
+    this.router.navigate(['/buscar', busqueda]);
 
   }
 }

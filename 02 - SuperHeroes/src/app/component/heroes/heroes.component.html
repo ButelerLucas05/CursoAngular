@@ -5,26 +5,11 @@
 <hr>
 
 <div class="card-columns">
-
-    <!-- con el con el ngFor recorremos el arreglo  heroes de heroes.component.ts-->
-    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
-
-          <!--                                     Variable For.Atributo [] para indicar que angular maneja el atributo-->
-        <img class="card-img-top img-fluid" [src]="heroe.img" [alt]="heroe.nombre" >
-        
-        <div class="card-body">
-            <h5 class="card-title">{{ heroe.nombre }}</h5>
-            <p class="card-text">{{ heroe.bio }}</p>
-            <p class="card-text"><small class="text-muted">{{ heroe.aparicion   }}</small></p>
-
-            <button (click)="verHeroe(i)"
-            class="btn btn-outline-primary btn-block">Ver mas... </button>
-
-            <!--  con el router link hacemos ref a la ruta del link, los parametros son Ruta/indice-->
-           <!-- <a [routerLink]="['/heroe',i]"  class="btn btn-outline-primary btn-block">Ver mas...</a> -->
-
-        </div>
-    </div>
+    <!-- con el con el ngFor recorremos el arreglo  heroes de heroes.component.ts -->
+    
+    <!-- [heroe] es la propiedad de Input y = "heroe" es el heroe que se envia a travez del ngFor
+        [i] es la propiedad de input definida en heroe-tarjeta.component -->
+    <app-heroe-tarjeta [heroe]="a" [index]='i' *ngFor="let a of heroes; let i = index"> </app-heroe-tarjeta>
 
 
 

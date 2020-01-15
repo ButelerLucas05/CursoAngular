@@ -5,6 +5,7 @@ import {HomeComponent} from './component/home/home.component';
 import { AboutComponent } from './component/about/about.component';
 import { HeroesComponent } from './component/heroes/heroes.component';
 import {HeroeComponent} from './component/heroe/heroe.component';
+import {BuscadorComponent} from './component/buscador/buscador.component';
 
 
 const APP_ROUTES: Routes = [
@@ -15,6 +16,8 @@ const APP_ROUTES: Routes = [
     {path:'heroes',component:HeroesComponent},
      // en este caso se le pasa un ID para hacer referencia al heroe indicado
     {path:'heroe/:id',component:HeroeComponent},
+    {path:'buscador/:busqueda',component:BuscadorComponent},
+
     {path:'**',pathMatch:'full',redirectTo:'home'}
 
    

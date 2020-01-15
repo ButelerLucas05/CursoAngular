@@ -1,0 +1,20 @@
+<!-- la variable busqueda hace referencia a la varible declarada en el componente buscador.component-->
+<h1>Buscando: <small> {{ busqueda }} </small>
+</h1>
+<hr>
+
+<div class="row animates fadeIn fast" *ngIf="heroes.length == 0 ">
+
+    <div class="col-md 12">
+        <div class="alert alert-info" role="alert">
+                No existen columnas con el termino {{ busqueda }}
+        </div>
+    </div>
+
+</div>
+
+<div class="card-columns">
+
+    <app-heroe-tarjeta [heroe]="a" [index]='i' *ngFor="let a of heroes; let i = index"> </app-heroe-tarjeta>
+    
+</div>
