@@ -1,0 +1,12 @@
+<div class="card-columns">
+
+    <!--             newRealeases hace ref al objeto creado en home.component -->
+    <div *ngFor="let release of newReleases" class="card">
+
+        <img [src]="release.images[0].url" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h3 class="card-title dark">  {{release.name}}</h3>
+            <span *ngFor="let artista of release.artists"  class="badge badge-pill badge-secondary">{{artista.name}}</span>
+        </div>
+
+    </div>
