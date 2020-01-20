@@ -1,0 +1,13 @@
+<div class="card-columns m-5 animated fadeIn"  >
+
+    <!--   newRealeases hace ref al objeto items creado en tarjetas.component -->
+    <div *ngFor="let item of items" class="card puntero" (click)='verArtista(item)' >
+
+        <img [src]="item.images | noImage" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h3 class="card-title dark">  {{item.name}}</h3>
+            <span *ngFor="let artista of item.artists"  class="badge badge-pill badge-secondary">{{artista.name}}</span>
+        </div>
+
+    </div>
+</div>
