@@ -25,3 +25,40 @@
     </div>
 
 </div>
+
+<div class="row m-5">
+    <div class="col">
+        <div class="col text-left ">
+
+            <h4>Top tracks</h4>
+
+        </div>
+
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th class="light">Foto</th>
+                    <th class="light">Album</th>
+                    <th class="light">Canción</th>
+                    <th class="light">Vista previa</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let topTrack of topTracks" >
+                    <td class="light">
+                        <img [src]="topTrack.album.images | noImage" class="img-thumb" alt="">
+                    </td>
+                    <td class="light">{{topTrack.album.name}}</td>
+                    <td class="light">{{topTrack.name}}</td>
+                    <td class="light">
+
+                        <iframe [src]="topTrack.uri | domseguro:'https://open.spotify.com/embed?uri='" width="250" height="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
