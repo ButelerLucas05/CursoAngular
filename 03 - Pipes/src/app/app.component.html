@@ -1,0 +1,144 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ nombre }}</td>
+        <td>Uppercase</td>
+        <td>{{ nombre | uppercase }}</td>
+      </tr>
+
+      <tr>
+        <td>{{ nombre }}</td>
+        <td>Lowercase</td>
+        <td>{{ nombre | lowercase }}</td>
+      </tr>
+
+      <tr>
+        <td>{{ nombre }}</td>
+        <td>Slice:3</td>
+        <!-- Corta las primeras N letras-->
+        <td>{{ nombre | slice:3 }}</td>
+      </tr>
+
+      <tr>
+        <td>{{ nombre }}</td>
+        <td>Slice:0:3</td>
+        <!-- Corta un substring-->
+        <td>{{ nombre | slice:0:3 }}</td>
+      </tr>
+
+      <tr>
+        <td>{{ arreglo}}</td>
+        <td>Slice:1:4</td>
+        <!-- Corta un substring-->
+        <td>{{ arreglo | slice:1:4 }}</td>
+      </tr>
+
+      <tr>
+        <td>{{ nombre }}</td>
+        <td>Slice</td>
+        <!-- Corta un substring-->
+        <td>{{ nombre | slice:0:3 }}</td>
+      </tr>
+
+
+      <tr>
+        <td>{{ PI }}</td>
+        <td>Number'3.0-0'</td>
+        <!-- Cantidad de enteros cuantos decimales ,-->
+        <td>{{ PI | number:'3.0-0' }}</td>
+      </tr>
+
+      <tr>
+        <td>{{ PI }}</td>
+        <td>Number'1.0-2'</td>
+        <!-- Cantidad de enteros cuantos decimales ,-->
+        <td>{{ PI | number:'1.0-2' }}</td>
+      </tr>
+
+      <tr>
+        <td>{{ a }}</td>
+        <td>Percent'2.1-2'</td>
+        <!-- Cantidad de enteros cuantos decimales ,-->
+        <td>{{ a | percent:'2.1-2' }}</td>
+      </tr>
+      
+      <tr>
+        <td>{{ salario }}</td>
+        <td>Currency</td>
+        <!-- primera variable currency Code - segunda si va o no el simbolo , tercera formato-->
+        <td>{{ salario | currency:'EUR':true:'1.0-0' }}</td>
+      </tr>
+
+      <tr>
+        <td>{{ salario }}</td>
+        <td>Currency</td>
+        <!-- solamente mostrar el numero formateado-->
+        <td>{{ salario | number:'.2-2' }}</td>
+      </tr>
+
+      
+      <tr>
+        <td>{{ valorPromesa }}</td>
+        <td>Async</td>
+        <td>{{ valorPromesa | async }}</td>
+      </tr>
+
+      <tr>
+        <td>{{ fecha }}</td>
+        <td>Date</td>
+        <td>{{ fecha | date }}</td>
+      </tr>
+
+      <tr>
+        <td>{{ fecha }}</td>
+        <td>Date</td>
+        <td>{{ fecha | date:'medium' }}</td>
+      </tr>
+
+      <tr>
+        <td>{{ fecha }}</td>
+        <td>Date dia-Mes-año completo </td>
+        <td>{{ fecha | date:'dd/MM/yyyy' }}</td>
+      </tr>
+
+
+      
+      <tr>
+        <td>{{ nombreCompleto }}</td>
+        <td>Pipe Capitalizado(Personalizado) </td>
+        <td>{{ nombreCompleto | capitalizado }}</td>
+      </tr>
+
+          
+      <tr>
+        <td>{{ nombreCompleto }}</td>
+        <td>Pipe Capitalizado - Solo primera palabra </td>
+        <td>{{ nombreCompleto | capitalizado:false }}</td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+  <h4>JSON PIPE</h4>
+  <pre>
+    {{ heroe | json }}
+
+  </pre>
+ 
+
+
+
+</div>
